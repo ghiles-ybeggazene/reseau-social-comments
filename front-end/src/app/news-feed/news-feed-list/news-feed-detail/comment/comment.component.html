@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-md-2">
+		<img src="{{'assets/images/' + comment?.user.picture}}" width="100px" height="100px" *ngIf="comment?.user.picture">
+		<img src="assets/images/default.jpg" width="100px" height="100px" *ngIf="!comment?.user.picture">
+	</div>
+	<div class="col-md-10">
+		<span><em>{{comment?.user.name}}</em></span>
+		<span class="float-right">{{comment?.date | date: 'h:mm, d. MMMM'}}</span>
+		<br>
+		<p>{{comment?.text}}</p>
+	</div>
+</div>
+<br>
+

@@ -1,0 +1,11 @@
+ <div class="modal-body">
+ 	<form [formGroup]="commentForm">
+ 		<div class="form-group">	  
+	  	<textarea placeholder="comment" class="form-control" name="comment" formControlName="comment"></textarea>
+	  	<div class="col-sm-4" *ngIf="commentForm.controls.comment.touched">
+		   <div *ngIf="commentForm.controls.comment.errors?.required">This field is required.</div>		   
+		</div>
+	  </div>
+	  <button type="button" class="btn btn-primary" [disabled]="!commentForm.valid" (click)="activeModal.close(saveComment())">Save</button>
+ 	</form>
+ </div>

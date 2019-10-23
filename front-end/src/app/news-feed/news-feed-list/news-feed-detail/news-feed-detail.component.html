@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-2">
+		<div>
+			<img src="{{'assets/images/' + post?.user.picture}}" width="100%">
+		</div>
+		<h5>{{post?.user.name}}</h5>
+		<p>{{post?.date | date: 'h:mm, d. MMMM'}}</p>
+	</div>
+	<div class="col-md-6">
+		<ngb-tabset>
+		  <ngb-tab title="Post">
+		    <ng-template ngbTabContent>
+		    	<p>{{post?.text}}</p> 
+		    </ng-template>
+		  </ngb-tab>
+		  <ngb-tab title="Comments">
+		    <ng-template ngbTabContent>
+		    	<div class="col-md-12" *ngFor="let comment of comments">
+		    		<fed-comment [comment]="comment"></fed-comment>
+		    	</div>		
+		    	<button class="btn btn-success" (click)="openModal(post)">New Comment</button>    	
+		    </ng-template>
+		  </ngb-tab>		  
+		</ngb-tabset>	
+	</div>
+</div>
+<br>
